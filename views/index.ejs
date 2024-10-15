@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+
+    <header>
+
+         <!-- Problema: Formulário não estava enviando dados corretamente -->
+         <!-- Solução: Adicionado atributo 'method="post"' --> 
+          
+        <% if (task==null) { %>
+            <form action="/create" method="post">
+                <input type="text" name="task" id="task" placeholder="Insira uma tarefa" />
+                <input value="false" name="check" id="check" type="hidden" />
+                <button id="addButton" type="submit">Adicionar</button>
+            </form>
+            <% } else { %>
+                <form action="/update-task/<%= task._id %>" method="post">
+                    <input type="text" name="task" id="task" value="<%= task.task %>">
+                    <input value="false" name="check" id="check" type="hidden" />
+                    <button id="addButton" type="submit">Atualizar</button>
+                </form>
+                <% } %>
+    </header>
+
+    <section id="tasks">
+        <ul>
+            <% tasksList.forEach((task)=> { %>
+                <li>
+                    <a href="/">
+                        <%= task.task %> <span>
+                                <%= task.date.toLocaleDateString('pt-BR') %>
+                            </span>
+                    </a>
+
+                    <a href="/getById/<%= task._id %>">Editar <i class="bi bi-pencil-square"></i> </a>
+                    <form action="/delete-task/<%= task._id %>" method="post" style="display:inline;"
+                        onsubmit="return confirmDelete()">
+                        <button type="submit">Apagar <i class="bi bi-trash"></i> </button>
+                    </form>
+                </li>
+                <% }) %>
+        </ul>
+    </section>
+
+    <script>
+        function confirmDelete() {
+            return confirm('Você realmente deseja apagar esta tarefa?');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
