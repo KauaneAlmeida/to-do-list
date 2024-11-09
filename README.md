@@ -20,6 +20,9 @@ Este é um projeto de lista de tarefas simples, desenvolvido com Node.js, Expres
 - Azure Devops
 - HTML/CSS
 
+## LINK VÍDEO APRESENTAÇÃO DA APLICAÇÃO
+[Apresentação](https://www.youtube.com/watch?v=X2myR3I2-bU&t=14s)
+
 
 ## Instalação
 1. Clone o repositório:
