@@ -21,7 +21,7 @@ Este é um projeto de lista de tarefas simples, desenvolvido com Node.js, Expres
 - HTML/CSS
 
 ## LINK VÍDEO APRESENTAÇÃO DA APLICAÇÃO
-[Apresentação] ((https://youtu.be/X2myR3I2-bU?si=gL8oeXbu6O9kq_DL)
+[Apresentação] (https://youtu.be/X2myR3I2-bU?si=gL8oeXbu6O9kq_DL)
 
 
 ## Instalação
